@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/flowers.png" type="image/x-icon" />
+    <title>Flowers</title>
+    <style>
+      .btn {
+        margin: 50px;
+        padding: 15px 40px;
+        border: none;
+        outline: none;
+        color: #d2e6ff;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 12px;
+      }
+      .btn::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+      /* glow */
+      .btn::before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 600%;
+        z-index: -1;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        filter: blur(8px);
+        animation: glowing 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+        opacity: 0;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      /* hover */
+      .btn:hover::before {
+        opacity: 1;
+      }
+
+      .btn:active:after {
+        background: transparent;
+      }
+
+      .btn:active {
+        color: #000;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="greetings">
+      <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
+      <span>H</span>
+      <span>i</span>
+      <span>_</span>
+      <span>N</span>
+      <span>a</span>
+      <span>n</span>
+      <span>a</span>
+    </div>
+    <div class="description">
+      <span
+        >Hai na, apa kabar? I know this is a difficult choice, but I will always
+        respect your choice, it seems I'm right, you are an adult now, you can
+        choose your own path, and I really appreciate and really understand why
+        the path you chose is to choose not to be together . I know this will
+        hurt, and I don't know how long it takes me to find a way out of the
+        pain and regret that I feel, in the end it seems that we are destined
+        not to be together.. thanks for everything<br /><br />here's a little
+        gift<br /><br />
+      </span>
+      <span>Thanks for everything :&#41;</span>
+    </div>
+    <div class="button">
+      <button class="btn"><a href="flower.html">Klik disini Na!</a></button>
+    </div>
+  </body>
+</html>
