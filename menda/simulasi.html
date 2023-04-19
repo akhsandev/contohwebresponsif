@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PERCOBAAN MOMENTUM DAN IMPULS</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: #fbfcff;
+      }
+
+      .btn {
+        border: none;
+        padding: 10px;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      .mySlides {
+        display: none;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+      .waviy {
+        position: relative;
+        -webkit-box-reflect: below 0px
+          linear-gradient(transparent, rgba(0, 0, 0, 0));
+        font-size: 0.9rem;
+        padding-top: 0;
+      }
+      .waviy span {
+        font-family: "Alfa Slab One", cursive;
+        position: relative;
+        display: inline-block;
+        color: black;
+        text-transform: uppercase;
+        animation: waviy 1s infinite;
+        animation-delay: calc(0.1s * var(--i));
+        padding-top: 10;
+      }
+      @keyframes waviy {
+        0%,
+        40%,
+        100% {
+          transform: translateY(0);
+        }
+        10% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .responsive-iframee {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .container {
+        position: relative;
+        overflow: auto;
+        width: 100%;
+        padding-top: 56%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      }
+      .containerrr {
+        position: relative;
+        overflow: auto;
+        width: 100%;
+        padding-top: 0%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      }
+      .containerr {
+        position: relative;
+        overflow: auto;
+        width: 100%;
+        padding-top: 0%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .navigation-bar {
+        width: 100%; /* i'm assuming full width */
+        height: 70px; /* change it to desired width */
+        background-color: #ffffff; /* change to desired color */
+      }
+      .logo {
+        display: inline-block;
+        vertical-align: top;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 10px; /* if you want it vertically middle of the navbar. */
+      }
+      .navigation-bar > a {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 0px;
+        margin-left: 0px;
+        height: 80px; /* if you want it to take the full height of the bar */
+        line-height: 65px; /* if you want it vertically middle of the navbar */
+      }
+      .imgg {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- BAGIAN ATAS (JUDUL) -->
+    <div
+      class="w3-content"
+      style="
+        max-width: 100%;
+        margin-top: 0px;
+        margin-left: 5%;
+        margin-right: 5%;
+        overflow: auto;
+      "
+    >
+      <!-- JUDUL -->
+      <div class="containerrr">
+        <img src="up.png" alt="Nature" class="imgg" />
+      </div>
+      <!-- SIMULASI -->
+      <div class="container">
+        <iframe
+          class="responsive-iframe"
+          src="gravity-force-lab-basics_en.html"
+          width="800"
+          height="600"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+    <div>
+      <!--PERTABELAN DKK-->
+
+      <div class="containerr">
+        <div align="center" id="liveworksheet3408276" style="width: 100%">
+          <span id="lwslink3408276"
+            ><font face="Arial" size="2"
+              ><a
+                href="https://www.liveworksheets.com/worksheets/id/Fisika/Hukum_Gravitasi_Newton/Lkpd_GRAVITASI_NEWTON_zu3408276gl"
+                >Lkpd GRAVITASI NEWTON</a
+              >, an interactive worksheet by
+              <a href="https://www.liveworksheets.com/user/akhsan31"
+                >akhsan31</a
+              ></font
+            >
+            <br
+          /></span>
+        </div>
+        <script src="https://files.liveworksheets.com/embed/embed.js"></script>
+        <script language="javascript">
+          loadliveworksheet(3408276, "mpglclxp", 4242, "www", 4949189);
+        </script>
+      </div>
+    </div>
+    <!-- End Page Content -->
+
+    <!-- Splash Screen code ends here  -->
+  </body>
+</html>
