@@ -1,0 +1,294 @@
+/* These are the stylings for the overall look and feel of all programs on site */
+
+/* To use these make sure this line is in your html file:  <link rel="stylesheet" type="text/css" href="../sitewide/stylings.css"> */
+
+/* This ID is for the title of the program found above the dotted areas of the problem */
+
+body {
+  background-color: #ffffff;
+  margin: 0px 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+#FullPage {
+  position: relative;
+  width: 1024px;
+  padding-bottom: 50px;
+  margin: 0px auto; /* Right and left margin widths set to "auto" */
+  text-align: left; /* Counteract to IE5/Win Hack */
+}
+
+#FullPage2 {
+  position: relative;
+  width: 902px;
+  padding-bottom: 50px;
+  margin: 0px auto; /* Right and left margin widths set to "auto" */
+  text-align: left; /* Counteract to IE5/Win Hack */
+}
+
+MainBody {
+  position: relative;
+  top: 0px;
+}
+
+ul {
+  text-align: left;
+}
+
+ul li {
+  list-style-type: square;
+  padding-bottom: 10px;
+  color: #00306e;
+  font-size: large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+ul ul li {
+  list-style-type: circle;
+  color: #000000;
+  padding-bottom: 10px;
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#MainNav {
+  position: relative;
+  top: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: none;
+  height: 30px;
+}
+
+ul#menu {
+  padding: 0;
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+ul#menu li {
+  display: inline;
+  margin-right: 3px;
+  width: 50px;
+}
+
+ul#menu li a {
+  background-color: #ffffff;
+  padding: 10px;
+  text-decoration: none;
+  color: #00306e;
+}
+
+ul#menu li a:hover {
+  color: white;
+  background-color: black;
+}
+
+#ProgramTitle {
+  position: relative;
+  top: 25px;
+  height: 50px;
+  width: 1024px;
+  text-align: center;
+}
+
+#ProgramTitle900 {
+  position: relative;
+  top: 25px;
+  width: 900px;
+  text-align: center;
+}
+
+#HomeIcon {
+  position: absolute;
+  top: 25px;
+  left: 100px;
+}
+
+/* This class is for the title of the program found above the dotted areas of the problem */
+
+.Titles {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: xx-large;
+  color: #00306e;
+  text-align: center;
+}
+
+/* This class is for the top line of text inside the dotted areas of the problem */
+
+.SectionTitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: x-large;
+  color: #000000;
+  text-align: center;
+}
+
+/* This ID is for entire area of the program where the question and answer submissions are found */
+
+#QuestionSection {
+  position: absolute;
+  top: 100px;
+  width: 900px;
+  left: 50px;
+  height: 600px;
+  border: black;
+  border-style: dashed;
+  border-width: 5px;
+  visibility: hidden;
+}
+
+/* This ID is for line of text telling who is working on this program and how many attempts they have made */
+
+#NameAndAttempts {
+  position: absolute;
+  top: 10px;
+  width: 900px;
+  text-align: center;
+}
+
+/* This ID is for randomly generated question */
+
+#ActualQuestion {
+  position: absolute;
+  top: 45px;
+  width: 850px;
+  text-align: center;
+  left: 25px;
+}
+
+/* This ID is for the formatting of the text for the randomly generated question */
+
+.QuestionText {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: large;
+  color: #000000;
+  text-align: center;
+}
+
+/* This ID is for locating the Title for the spot where you are putting your answer */
+
+#AnswerTitle {
+  position: absolute;
+  top: 160px;
+  width: 900px;
+  text-align: center;
+}
+
+/* This ID is for locating the disclaimers about how you should format your answer */
+
+#LittleAnswerTitle {
+  position: absolute;
+  top: 200px;
+  width: 900px;
+  text-align: center;
+}
+
+/* This ID is for locating the name of the first variable you are solving for */
+
+#Answer1Variable {
+  position: absolute;
+  top: 250px;
+  left: 200px;
+}
+
+/* This ID is for locating the name of the second variable you are solving for */
+
+#Answer2Variable {
+  position: absolute;
+  top: 280px;
+  left: 200px;
+}
+
+/* This ID is for locating the form box of the first variable you are solving for */
+
+#Answer1 {
+  position: absolute;
+  top: 250px;
+  left: 500px;
+}
+
+/* This ID is for locating the name of the second variable you are solving for */
+
+#Answer2 {
+  position: absolute;
+  top: 280px;
+  left: 500px;
+}
+
+/* This ID is for formatting the text displaying the name of the variable you are solving for */
+
+.AnswerVariable {
+  width: 240px;
+  height: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-size: large;
+  color: #00306e;
+  text-align: right;
+}
+
+/* This ID is for locating the check answer button */
+
+#Checker {
+  position: absolute;
+  top: 320px;
+  width: 900px;
+  text-align: center;
+}
+
+/* This ID is for locating any picture you might want to put on the Question Section */
+
+#PictureHolderQuestion {
+  position: absolute;
+  top: 400px;
+  left: 250px;
+}
+
+/* This ID is for entire area of the program where you see how good your answers were */
+
+#HowDidIDoSection {
+  position: absolute;
+  top: 100px;
+  width: 900px;
+  left: 50px;
+  height: 600px;
+  border: black;
+  border-style: dashed;
+  border-width: 5px;
+  visibility: hidden;
+}
+
+/* This ID is for locating the reload button */
+
+#Reloader {
+  position: absolute;
+  top: 75px;
+  width: 900px;
+  text-align: center;
+  visibility: hidden;
+}
+
+/* This ID is for locating the helpful info stuff */
+
+#HelpfulInfo {
+  position: absolute;
+  top: 530px;
+  left: 200px;
+}
+
+/* This ID is for locating the helpme stuff */
+
+#HelpMe {
+  position: relative;
+  top: 10px;
+  height: 50px;
+}
+
+#footer {
+  position: relative;
+  margin-top: 25px;
+  height: 50px;
+  width: 1000px;
+  text-align: center;
+}
