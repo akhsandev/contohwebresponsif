@@ -1,0 +1,81 @@
+﻿/*!
+* © by Sitsanlis Ilias
+* This notice shall be included in all copies or substantial portions of the Software.
+* Creative Commons 4.0/CC BY - NC - SA 4.0. 
+*/
+
+
+.ui-slider  {
+	width : 10em;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	display : inline-block; 
+	vertical-align:text-bottom ;
+}
+
+.ui-spinner {
+	font-size: 1em;
+	text-align: left;
+}
+
+.ui-spinner-input {
+	width:45px;
+	text-align: left;
+}
+
+.ui-icon {
+	font-size: 1em;
+}
+
+.ui-button {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:1em;
+}
+
+.ui-slider .ui-slider-handle {
+	width: 1.8em; 
+	height: 1.4em;
+	top: 50%;
+	margin-top: -0.8em;
+	margin-left: -1em;
+	line-height: 1.4em;
+	/*
+	height: 15px;
+	width: 25px;
+	margin-left: -1em;
+	*/
+}
+
+
+html .ui-button.withoutBorder   {	
+	border: 1px solid rgba(255, 255, 255, 0);
+	background: none;
+	font-weight: normal;
+	color: #000;
+	vertical-align:baseline;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+html .ui-button.withoutBorder:hover   {	
+	border: 1px solid #e9e9e9;
+	border-radius: 1px;
+	background: #e9e9e9;
+	font-weight: normal;
+	color: #000;
+}
+
+/*
+#foo .withoutBorder  {
+	font-weight: normal; 
+	color: #000;
+	background: none; 
+	border: none; 
+	
+	background-color: #ffffff; 
+	border-color: #ffffff; 
+	border-radius: 3px;
+	vertical-align:baseline;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+*/

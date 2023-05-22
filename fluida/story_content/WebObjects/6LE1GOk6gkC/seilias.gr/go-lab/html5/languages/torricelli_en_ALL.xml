@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<messagebundle mails="youremail@example.com">
+    <msg name="rewind">Step back</msg>
+    <msg name="stop">Reset</msg>
+    <msg name="forward">Step forward</msg>
+    <msg name="beginning">Small step back</msg>
+    <msg name="play">Run</msg>
+    <msg name="end">Small step forward</msg>
+    <msg name="slowView">Slow motion</msg>
+    <msg name="demoCanvas">Your browser does not support html5, please use the latest version</msg>
+    <msg name="pressureExt">External pressure</msg>
+    <msg name="areaHole">Hole area</msg>
+    <msg name="distHole">Distance of hole from the bottom</msg>
+    <msg name="water">Initial water level</msg>
+    <msg name="copy">Copy</msg>
+    <msg name="help">With this lab, Torricelli's theorem can be studied. You have the ability to change the height of the water in the container, the distance of the hole from the base of the container, the height at which the container is located (dragging the ground or water), the area of the hole, and the external pressure.</msg>
+    </messagebundle>

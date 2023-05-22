@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<messagebundle mails="youremail@example.com">
+    <msg name="rewind">Αργή κίνηση πίσω</msg>
+    <msg name="stop">Επανεκκίνηση</msg>
+    <msg name="forward">Αργή κίνηση εμπρός</msg>
+    <msg name="beginning">Ένα καρέ πίσω</msg>
+    <msg name="play">Έναρξη</msg>
+    <msg name="end">Ένα καρέ εμπρός</msg>
+    <msg name="slowView">Αργή Προβολή</msg>
+    <msg name="demoCanvas">Πρέπει να αναβαθμίσετε το browser για να υποστηρίζει html5</msg>
+    <msg name="pressureExt">Εξωτερική Πίεση</msg>
+    <msg name="areaHole">Εμβαδόν Οπής</msg>
+    <msg name="distHole">Απόσταση οπής από τον πυθμένα</msg>
+    <msg name="water">Αρχικό ύψος νερού</msg>
+    <msg name="copy">Αντίγραφο</msg>
+    <msg name="help">Με την συγκεκριμένη προσομοίωση μπορούμε να μελετήσουμε το θεώρημα του Torricelli. Έχουμε την δυνατότητα να μεταβάλλουμε το ύψος του νερού που υπάρχει στο δοχείο, την απόσταση της οπής από την βάση του δοχείου, το ύψος στο οποίο βρίσκεται το δοχείο (σύροντας το έδαφος ή το νερό), το εμβαδόν της οπής και την εξωτερική πίεση.</msg>
+</messagebundle>

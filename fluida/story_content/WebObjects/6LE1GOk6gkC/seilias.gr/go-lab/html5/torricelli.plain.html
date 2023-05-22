@@ -1,0 +1,198 @@
+﻿<!--© by Sitsanlis Ilias-->
+
+<!doctype html>
+<html>
+
+<!-- Mirrored from seilias.gr/go-lab/html5/torricelli.plain.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2023 09:05:17 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1080, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="translations" lang="en" value="languages/torricelli_en_ALL.xml">
+	<meta name="translations" lang="el" value="languages/torricelli_el_ALL.xml">
+	
+	<title>Torricelli</title>
+	<style>
+		html {
+			touch-action: pan-x pan-y;
+		}
+		canvas {
+			touch-action: none;
+		}
+		.bottom-right {
+			position: absolute;
+			bottom: 2px;
+			right: 4px;
+			font-size: 12px;
+		}
+	</style>	
+
+	<script src="files/jquery/external/jquery/jquery.js"></script>
+	<script src="files/jquery/jquery-ui.js"></script>
+	<link href="files/jquery/jquery-ui.css" rel="stylesheet">
+	<link href="files/jquery/jquery-ui-1.12.icon-font.min.css" rel="stylesheet">
+	<script src="files/jquery/jquery.ui.touch-punch.min.js"></script>
+	<script src="files/createjs/createjs-2015.11.26.min.js"></script>
+	
+	<link rel="stylesheet" href="files/css/main.css">
+	<link rel="stylesheet" href="files/css/buttons.css">
+
+	<script src="files/scripts/cT.min.js"></script>
+	<script src="myScript.js"></script>
+	
+	<script src="files/scripts/ui.js"></script>
+	<script src="files/scripts/infos.js"></script>
+	
+	<script src="torricelli/buttons.js"></script>
+	<script src="torricelli/dragAndDrop.js"></script>
+	<script src="torricelli/functions.js"></script>
+	<script src="torricelli/shapes.js"></script>
+	<script src="torricelli/app.js"></script>
+	
+</head>
+	
+<body onLoad="init()">
+	<div id="main">
+  <!--ΚΟΥΜΠΙΑ ΚΑΙ CANVAS-->
+	<div id="left" class="floatLeft">
+		<div style="display: table;margin-right: auto; margin-left: auto;">
+			<!--ΚΟΥΜΠΙΑ-->
+			<div id="foo" style="z-index: 1; visibility: hidden;">
+				<button id="rewind" class="withoutBorder">Αργή κίνηση πίσω</button>
+				<button id="stop" class="withoutBorder">Επανεκκίνηση</button>
+				<button id="forward" class="withoutBorder">Αργή κίνηση εμπρός</button>
+				<button id="beginning" class="withoutBorder">Ένα καρέ πίσω</button>
+				<button id="play" class="withoutBorder">&#9658;Έναρξη</button>
+				<button id="end" class="withoutBorder">Ένα καρέ εμπρός</button>
+				
+				<input type="checkbox" id="slowMotion" /><label for="slowMotion" class="withoutBorder"><span golab-lang="slowView">Αργή Προβολή</span></label>
+			</div>
+			<!--ΚΑΜΒΑΣ-->
+			<canvas id="demoCanvas" width="720" height="420" style="background-color:rgba(255, 255, 255, 1.00);visibility: hidden">
+				Πρέπει να αναβαθμίσετε το browser για να υποστηρίζει html5
+			</canvas>
+		</div>
+	</div>
+	
+	<!-- ΠΑΡΑΜΕΤΡΟΙ -->
+	<div id="right" class="floatRight" >
+		<div id="variables" style="display: table;margin-right: auto; margin-left: auto;  border: 2px solid #9C9898;background-color:blanchedalmond;visibility: hidden">
+			<!--ΜΕΤΑΒΛΗΤΕΣ-->
+			<div style="padding: 5px; text-align: center">
+				
+				<div class="widget">
+					<fieldset>
+						<legend golab-lang="pressureExt">Εξωτερική Πίεση</legend>
+						<fixLen>
+							<label for="PexSpinner" class="ui-controlgroup-label"><span class="math">p</span><span class="units"><sub>εξ</sub> =</span></label>
+							<input id="PexSpinner"><span class="units"> atm</span>
+						</fixLen>
+
+						<span class="math"></span><div id="PexSlider"></div>
+					</fieldset>
+				</div>
+				
+				
+				<!--Εμβαδόν Οπής-->
+				<div class="widget">
+					<fieldset>
+						<legend golab-lang="areaHole">Εμβαδόν Οπής</legend>
+						<fixLen>
+							<label for="A0Spinner" class="ui-controlgroup-label"><span class="math">A</span><span class="units"><sub>0</sub> =</span></label>
+							<input id="A0Spinner"><span class="units"> cm<sup>2</sup></span>
+						</fixLen>
+
+						<span class="math"></span><div id="A0Slider"></div>
+					</fieldset>
+				</div>
+				
+				<!--ύψος 2-->
+				<div class="widget">
+					<fieldset>
+						<legend golab-lang="distHole">Απόσταση οπής από τον πυθμένα</legend>
+						<fixLen>
+							<label for="hSpinner" class="ui-controlgroup-label"><span class="math">h</span><span class="units"> =</span></label>
+							<input id="hSpinner"><span class="units"> m</span>
+						</fixLen>
+
+						<span class="math"></span><div id="hSlider"></div>
+					</fieldset>
+				</div>
+				
+				<div class="widget">
+					<fieldset>
+						<legend golab-lang="water">Αρχικό ύψος νερού</legend>
+						<fixLen>
+							<label for="HSpinner" class="ui-controlgroup-label"><span class="math">H</span><span class="units"> =</span></label>
+							<input id="HSpinner"><span class="units"> m</span>
+						</fixLen>
+
+						<span class="math"></span><div id="HSlider"></div>
+					</fieldset>
+				</div>
+				
+				
+				
+				
+				<!--ΑΝΤΙΓΡΑΦΟ ΣΤΙΓΜΙΟΥΤΥΠΟΥ-->
+				<div class="widget">
+					<button id="cloneGraph" ><span golab-lang="copy">Αντίγραφο</span> <span class="ui-icon ui-icon-camera"></span></button>
+					
+					<!-- 
+					<button id="clearCopy" class="ui-icon ui-icon-close">clear</button>
+					-->
+					<button id="clearCopy" ><span class="ui-icon ui-icon-close"></span></button>
+				</div>
+				
+				
+				<input type="hidden" id="refresh" value="no">
+			</div>
+			
+			<div id="CI" style="visibility:hidden">
+				
+				<div class="bottom-right">
+					© seilias.gr <span class="ui-icon ui-icon-marker "></span>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	
+	<!--
+	<p class="ui-widget-content ui-state-default ui-helper-clearfix">
+		<span style="float: left; margin-right: 0.5em;" class="ui-icon ui-icon-jquery">icon</span> ui-icon-jquery
+	</p>
+  -->
+
+  <script src="../../../utwente.graasp.eu/external/js/translations-jquery-1.0.js"></script>
+  <meta name='golab-i18n-autoload' value='true'>
+
+  <script>
+	  // To use a translated term in JS
+	  const prefs = new golab.i18n({
+		  // language: "el", // Optional. Use this field if you want manually to specify the language
+		  // standalone: true, // Optional. Default is false. If true, it will not use the web service for downloading translations
+		  // debug: true, // Optional. Default is false
+	  });
+	  prefs.ready(function() {
+		helpText.text = prefs.getMessage('help');
+	document.getElementById('rewind').title = prefs.getMessage('rewind');
+		  document.getElementById('stop').title = prefs.getMessage('stop');
+		  document.getElementById('forward').title = prefs.getMessage('forward');
+		  document.getElementById('beginning').title = prefs.getMessage('beginning');
+		  document.getElementById('play').title = prefs.getMessage('play');
+	document.getElementById('end').title = prefs.getMessage('end');
+	var dialogTitle = document.getElementById('ui-id-1');
+	if (dialogTitle) {
+	  dialogTitle.innerHTML = prefs.getMessage('settings');
+	}
+	  });
+  </script>
+
+	</div>
+</body>
+
+<!-- Mirrored from seilias.gr/go-lab/html5/torricelli.plain.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 22 May 2023 09:05:27 GMT -->
+</html>
