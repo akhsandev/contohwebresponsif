@@ -1,0 +1,182 @@
+﻿<!--© by Sitsanlis Ilias-->
+
+<!DOCTYPE html>
+<html>
+  <!-- Mirrored from seilias.gr/go-lab/html5/Bohr.plain.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 15:06:29 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1000, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="translations" lang="en" value="languages/Bohr_en_ALL.xml" />
+    <meta name="translations" lang="el" value="languages/Bohr_el_ALL.xml" />
+
+    <title golab-lang="title">Το πρότυπο του Bohr</title>
+    <style>
+      /*
+		.bottom-right {
+			position: absolute;
+			bottom: 2px;
+			right: 4px;
+			font-size: 12px;
+		}
+		*/
+    </style>
+
+    <!--<script src="files/jquery/external/jquery/jquery-3.4.1.min.js"></script>-->
+    <script src="files/jquery/external/jquery/jquery.js"></script>
+    <script src="files/jquery/jquery-ui.js"></script>
+    <link href="files/jquery/jquery-ui.css" rel="stylesheet" />
+    <link
+      href="files/jquery/jquery-ui-1.12.icon-font.min.css"
+      rel="stylesheet"
+    />
+    <script src="files/jquery/jquery.ui.touch-punch.min.js"></script>
+    <script src="files/createjs/easeljs.min.js"></script>
+
+    <link rel="stylesheet" href="files/css/main.css" />
+    <link rel="stylesheet" href="files/css/buttons.css" />
+
+    <script src="files/scripts/cT.min.js"></script>
+    <script src="myScript.js"></script>
+
+    <script src="files/scripts/ui.js"></script>
+    <script src="files/scripts/infos.js"></script>
+    <script src="files/scripts/mainButtons.js"></script>
+
+    <script src="Bohr/buttons.js"></script>
+    <script src="Bohr/dragAndDrop.js"></script>
+    <script src="Bohr/functions.js"></script>
+    <script src="Bohr/shapes.js"></script>
+    <script src="Bohr/app.js"></script>
+  </head>
+
+  <body onLoad="init()">
+    <div id="main">
+      <!--ΚΟΥΜΠΙΑ ΚΑΙ CANVAS-->
+      <div id="left" class="floatLeft">
+        <div style="display: table; margin-right: auto; margin-left: auto">
+          <!--ΚΟΥΜΠΙΑ-->
+          <div id="foo" style="z-index: 1; visibility: hidden">
+            <button id="rewind" class="withoutBorder">Αργή κίνηση πίσω</button>
+            <button id="stop" class="withoutBorder">Επανεκκίνηση</button>
+            <button id="forward" class="withoutBorder">
+              Αργή κίνηση εμπρός
+            </button>
+            <button id="beginning" class="withoutBorder">Ένα καρέ πίσω</button>
+            <button id="play" class="withoutBorder">&#9658;Έναρξη</button>
+            <button id="end" class="withoutBorder">Ένα καρέ εμπρός</button>
+
+            <button id="clearCopy" class="withoutBorder">
+              <span class="ui-icon ui-icon-delete"></span>
+            </button>
+
+            <input type="checkbox" id="slowMotion" /><label
+              for="slowMotion"
+              class="withoutBorder"
+              ><span golab-lang="slowView">Αργή Προβολή</span></label
+            >
+            <input type="checkbox" id="energyCh" /><label
+              for="energyCh"
+              class="withoutBorder"
+              ><span golab-lang="energyChart">Ενεργειακό Διάγραμμα</span></label
+            >
+          </div>
+          <!--ΚΑΜΒΑΣ-->
+          <canvas
+            id="demoCanvas"
+            width="720"
+            height="420"
+            style="background-color: rgba(255, 255, 255, 1); visibility: hidden"
+          >
+            Πρέπει να αναβαθμίσετε το browser για να υποστηρίζει html5
+          </canvas>
+        </div>
+      </div>
+
+      <!-- ΠΑΡΑΜΕΤΡΟΙ -->
+      <div id="right" class="floatRight">
+        <div
+          id="variables"
+          style="
+            display: table;
+            margin-right: auto;
+            margin-left: auto;
+            border: 2px solid #9c9898;
+            background-color: blanchedalmond;
+            visibility: hidden;
+          "
+        >
+          <!--ΜΕΤΑΒΛΗΤΕΣ-->
+          <div style="padding: 5px; text-align: center">
+            <!--ΤΑΧΥΤΗΤΑ-->
+            <div class="widget">
+              <fieldset>
+                <legend golab-lang="photonEnergy">Ενέργεια Φωτονίου</legend>
+
+                <fixLen>
+                  <label for="energySpinner" class="ui-controlgroup-label"
+                    ><span class="math">E</span
+                    ><span class="units"> = </span></label
+                  >
+                  <input id="energySpinner" /><span class="units">
+                    eV&nbsp;</span
+                  >
+                </fixLen>
+
+                <!--<div id="energySlider" style="width: 13em"></div>-->
+              </fieldset>
+            </div>
+
+            <div class="widget">
+              <button id="firePhoton" golab-lang="photonLaunch">
+                Εκτόξευση Φωτονίου
+              </button>
+            </div>
+
+            <!--<div id="progressbar-1"></div> -->
+
+            <input type="hidden" id="refresh" value="no" />
+          </div>
+
+          <!--<div id="CI" style="visibility:hidden">
+
+				<div class="bottom-right">
+					© seilias.gr <span class="ui-icon ui-icon-marker "></span>
+				</div>
+				
+			</div>-->
+        </div>
+      </div>
+    </div>
+    <!--
+	<p class="ui-widget-content ui-state-default ui-helper-clearfix">
+		<span style="float: left; margin-right: 0.5em;" class="ui-icon ui-icon-jquery">icon</span> ui-icon-jquery
+	</p>
+	-->
+
+    <script src="../../../utwente.graasp.eu/external/js/translations-jquery-1.0.js"></script>
+    <meta name="golab-i18n-autoload" value="true" />
+
+    <script>
+      // To use a translated term in JS
+      const prefs = new golab.i18n({
+        // language: "el", // Optional. Use this field if you want manually to specify the language
+        // standalone: true, // Optional. Default is false. If true, it will not use the web service for downloading translations
+        // debug: true, // Optional. Default is false
+      });
+      prefs.ready(function () {
+        helpText.text = prefs.getMessage("help");
+        document.getElementById("rewind").title = prefs.getMessage("rewind");
+        document.getElementById("stop").title = prefs.getMessage("stop");
+        document.getElementById("forward").title = prefs.getMessage("forward");
+        document.getElementById("beginning").title =
+          prefs.getMessage("beginning");
+        document.getElementById("play").title = prefs.getMessage("play");
+        document.getElementById("end").title = prefs.getMessage("end");
+      });
+    </script>
+  </body>
+
+  <!-- Mirrored from seilias.gr/go-lab/html5/Bohr.plain.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 May 2023 15:06:49 GMT -->
+</html>

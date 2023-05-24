@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<messagebundle mails="youremail@example.com">
+	<msg name="title">The model of Bohr</msg>
+    <msg name="rewind">Step back</msg>
+    <msg name="stop">Reset</msg>
+    <msg name="forward">Step forward</msg>
+    <msg name="beginning">Small step back</msg>
+    <msg name="play">Run</msg>
+    <msg name="end">Small step forward</msg>
+    <msg name="slowView">Slow motion</msg>
+    <msg name="demoCanvas">Your browser does not support html5, please use the latest version</msg>
+    <msg name="energyChart">Energy chart</msg>
+    <msg name="photonEnergy">Photon energy</msg>
+    <msg name="photonLaunch">Photon launch</msg>
+    <msg name="help">In Bohr's model for the hydrogen atom the electron performs a smooth circular motion in well-defined orbits called layers. The 1st layer corresponds to n = 1 the second to n = 2 and so on. When the electron absorbs appropriate energy it goes to a layer with a larger n. It stays in this excited state for a very short time and falls into a lower energy layer emitting a photon. The energy of the emitted photon depends on the initial and final layer. When the electron falls on the layer n = 2 the emitted photons are in the visible region. If the final layer is of lower energy then a photon is emitted. If the final layer is of more energy then the transition corresponds to excitation. When the application is executed then to stimulate - de-stimulate it is enough to click on a layer and after some time the electron is de-excited and with successive steps ends up in its basic state.</msg>
+</messagebundle>
