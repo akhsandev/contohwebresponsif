@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIMULASI  (nd tauka namanya)</title>
+    <style>
+        /* CSS styling for responsiveness */
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+        }
+
+        label, input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: auto;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>SIMULASI  (nd tauka namanya)</h1>
+    <form onsubmit="event.preventDefault(); calculateFlowRateAndPressure();">
+        <label for="area1">Luas 1 (A1) (m²):</label>
+        <input type="number" id="area1" step="0.01" required><br><br>
+
+        <label for="area2">Luas 2 (A2) (m²):</label>
+        <input type="number" id="area2" step="0.01" required><br><br>
+
+        <label for="velocity1">Kec 1 (v1) (m/s):</label>
+        <input type="number" id="velocity1" step="0.01" required><br><br>
+
+        <label for="height1">Tinggi 1  (h1) (m):</label>
+        <input type="number" id="height1" step="0.01" required><br><br>
+
+        <label for="height2">Tinggi 2 (h2) (m):</label>
+        <input type="number" id="height2" step="0.01" required><br><br>
+
+        <input type="submit" value="Hitung V2 dan Tekanan">
+    </form>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateFlowRateAndPressure() {
+            let area1 = parseFloat(document.getElementById("area1").value);
+            let area2 = parseFloat(document.getElementById("area2").value);
+            let velocity1 = parseFloat(document.getElementById("velocity1").value);
+            let height1 = parseFloat(document.getElementById("height1").value);
+            let height2 = parseFloat(document.getElementById("height2").value);
+
+            let v2 = (area1 * velocity1) / area2;
+
+            let pressure1 = 0.5 * 1000 * (velocity1 ** 2) + 9.807 * 1000 * height1;
+            let pressure2 = 0.5 * 1000 * (v2 ** 2) + 9.807 * 1000 * height2;
+
+            document.getElementById("result").innerHTML =
+                "Kec. 2 (v2): " + v2.toFixed(2) + " m³/s<br><br>" +
+                "Tekanan 1: " + pressure1.toFixed(2) + " Pa<br><br>" +
+                "Tekanan 2: " + pressure2.toFixed(2) + " Pa";
+        }
+    </script>
+</body>
+</html>
